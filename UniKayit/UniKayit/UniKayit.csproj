@@ -43,8 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bolum.cs" />
+    <Compile Include="Ders.cs" />
+    <Compile Include="Doktora.cs" />
+    <Compile Include="Fakulte.cs" />
+    <Compile Include="Lisans.cs" />
+    <Compile Include="OgrElemani.cs" />
+    <Compile Include="Ogrenci.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sube.cs" />
+    <Compile Include="Universite.cs" />
+    <Compile Include="YukLisans.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
