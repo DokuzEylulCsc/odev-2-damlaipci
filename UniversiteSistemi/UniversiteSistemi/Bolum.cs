@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UniversiteSistemi
 {
@@ -11,8 +12,8 @@ namespace UniversiteSistemi
        
         public Dictionary<int,OgretimElemani> OgretimElemaniList = new Dictionary<int, OgretimElemani>();
         public Dictionary<int, Ogrenci> BolumdekiOgrencilerList = new Dictionary<int, Ogrenci>();
-        public Dictionary<int, Ders> KayıtlıDersler = new Dictionary<int, Ders>();
-
+        public Dictionary<int, Ders> DersKayit = new Dictionary<int, Ders>();
+        public Dictionary<int, Sube> SubeList = new Dictionary<int, Sube>();
         private int BolumNo;
         private string BolumAdi;
 
@@ -30,47 +31,110 @@ namespace UniversiteSistemi
         public Bolum(int No, string Ad)
         {
             BolumNo = No;
-            BolumNo = Ad;
+            BolumAdi = Ad;
         }
 
-        public void OgretimGorevlisiEkle(int ID, string Ad, string Soyad)
+        public void OgrenciEkle(int OgrenciNo, string OgrenciAdi,string OgrenciSoyadi,int OgrenciBolum,string OgrenciDuzey)
         {
             try
             {
-                KayitliOgretimUyeleri.Add(ID, new OgretimElemani(ID, Ad, Soyad));
+                Ogrenci ogrenci=new Lisans(0,"0","0",0); //boş oluşturuldu bi anlamı yok sadece aşağıda hata vermesin diye
+                //Ogrenci ogrenci = new Ogrenci(OgrenciNo, OgrenciAdi, OgrenciSoyadi,OgrenciBolum);
+                switch (OgrenciDuzey)
+                {
+                    case "Lisans": ogrenci = new Lisans(OgrenciNo, OgrenciAdi, OgrenciSoyadi, OgrenciBolum);
+                        break;
+                    case "YuksekLisans": ogrenci = new YuksekLisans(OgrenciNo, OgrenciAdi, OgrenciSoyadi, OgrenciBolum);
+                        break;
+                    case "Doktora": ogrenci = new Doktora(OgrenciNo, OgrenciAdi, OgrenciSoyadi, OgrenciBolum);
+                        break;
+                }
+
+                BolumdekiOgrencilerList.Add(OgrenciNo,ogrenci); //aşağısı
             }
-            catch (ArgumentException)
+            catch (Exception fe)
             {
-
-                throw new ArgumentException("Eklemek istediginiz ogretim gorevlisi zaten eklenmis !!");
-
+                MessageBox.Show("Hatali Giriş");
             }
         }
-
-        public void OgretimGorevlisiSil(int ID)
+        public void OgrenciSil(int id)
+        {
+            BolumdekiOgrencilerList.Remove(id);
+        }
+        public void DersEkle(int DersKodu, string DersAdi)
         {
             try
             {
-                KayitliOgretimUyeleri.Remove(ID);
+                Ders derskayit = new Ders(DersKodu,DersAdi);
+                DersKayit.Add(DersKodu,derskayit);
+                
             }
-            catch (ArgumentException)
+            catch(FormatException fe)
             {
-
-                throw new ArgumentException("Silmek istediginiz ogretim uyesi kayıtlı degil !!");
+                throw new FormatException("Hatali Giris");
             }
+            catch(Exception e)
+            {
+                throw new Exception("Ders Bulunmakta");
+            }
+
+           
         }
 
-        public void DersEkle(int DersID, string DersAdi, string HocaAdi)
+        public void DersSil(int DersKodu, string DersAdi)
         {
             try
             {
-                KayıtlıDersler.Add(DersID, new Ders(DersID, DersAdi));
+                DersKayit.Remove(DersKodu);
             }
-            catch (Exception)
+            catch (Exception fe)
+            {
+                MessageBox.Show("Hatali Giriş");
+            }
+           
+        }
+
+        public void OgretimElemani(int No, string Ad, string Soyad)
+        {
+            try
+            {
+                OgretimElemani ogrele = new OgretimElemani(No, Ad, Soyad);
+                OgretimElemaniList.Add(No,ogrele);
+            }
+            catch (FormatException fe)
             {
 
-                throw;
+                throw new FormatException("Hatali Giris");
+
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Ogretim Elemani Bulunmakta!!");
             }
         }
+
+        
+
+        public void OgretimElemaniSil(int No)
+        {
+            try
+            {
+                
+                OgretimElemaniList.Remove(No);
+            }
+            catch (FormatException)
+            {
+
+                throw new FormatException("Hatali Giriş");
+            }
+            catch(Exception e)
+            {
+                throw new Exception("Ogretim Elemani Bulunmamaktadir!");
+            }
+        }
+        
+        //public void SubeEkle(int SubeNo)
+        //public void SubeSil(int SubeNo
+        
     }
 }

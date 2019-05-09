@@ -8,6 +8,7 @@ namespace UniversiteSistemi
 {
     class Ders
     {
+        public Dictionary<int, Ogrenci> BolumdeKayitliOgrenci = new Dictionary<int, Ogrenci>();
         private int DersKodu;
         private string DersAdi;
 
@@ -29,5 +30,6 @@ namespace UniversiteSistemi
             DersKodu = Kod;
             DersAdi  = Ad;
         }
+
     }
 }

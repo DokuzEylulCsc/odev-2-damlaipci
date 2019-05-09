@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UniversiteSistemi
 {
     class Fakulte
     {
-        public Dictionary<int, Bolum> Bolum = new Dictionary<int, Bolum>();
+        public Dictionary<int, Bolum> BolumList = new Dictionary<int, Bolum>();
         private int FakulteNo;
         private string FakulteAdi;
 
@@ -29,29 +30,31 @@ namespace UniversiteSistemi
             FakulteAdi = Ad;
         }
 
-        public void BolumEkle(int BolumID, string BolumAd)
+        public void BolumEkle(int BolumNo, string BolumAdi)
         {
+            bool flag;
             try
             {
-                Bolum.Add(BolumID,BolumAd);
+                Bolum bolum= new Bolum(BolumNo, BolumAdi);
+                BolumList.Add(BolumNo,bolum);
             }
-            catch (FormatException)
+           
+            catch(Exception)
             {
-
-                throw new ArgumentException("Eklemek istediginiz bolum mevcut !!");
+               MessageBox.Show("Bolum Mevcut!");
             }
         }
 
-        public void BolumSil(int BolumID)
+        public void BolumSil(int BolumID,string BolumAdi)
         {
             try
             {
-                Bolumler.Remove(BolumID);
+                BolumList.Remove(BolumID);
             }
-            catch (ArgumentException)
+            
+            catch (Exception)
             {
-
-                throw new ArgumentException("Silmek istediginiz bolum mecvut degil !!");
+                MessageBox.Show("Bolum Yok!");
             }
         }
     }

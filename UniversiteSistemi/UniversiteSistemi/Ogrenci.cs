@@ -9,9 +9,10 @@ namespace UniversiteSistemi
     abstract class Ogrenci
     {
         private int OgrenciNo;
+        private int OgrenciSube;
         private string OgrenciAdi;
         private string OgrenciSoyadi;
-        private string Ogrencibolumu;
+        private int Ogrencibolumu;
 
         public int ogrenciNo
         {
@@ -28,19 +29,26 @@ namespace UniversiteSistemi
             get { return OgrenciSoyadi; }
             set { OgrenciSoyadi = value; }
         }
-        public string ogrenciBolum
+        public int ogrenciBolum
         {
             get { return Ogrencibolumu; }
             set { Ogrencibolumu = value; }
         }
-
-
-        public Ogrenci(int ID, string ad, string soyad, string bolum)
+        public int Sube
         {
-            ogrid = ID;
-            ogradi = ad;
-            ogrsoyadi = soyad;
-            ogrbolumu = bolum;
+            get { return OgrenciSube; }
+            set { OgrenciSube = value; }
+        }
+
+
+
+        public Ogrenci(int No, string Ad, string Soyad, int bolum)
+        {
+            OgrenciNo= No;
+            OgrenciAdi = Ad;
+            OgrenciSoyadi =Soyad;
+            ogrenciBolum = bolum;
+            
         }
     }
 }

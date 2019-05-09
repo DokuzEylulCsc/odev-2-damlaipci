@@ -3,22 +3,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UniversiteSistemi
 {
     class Universite
     {
-        public static Dictionary<int, Fakulte> Fakulteler = new Dictionary<int, Fakulte>();
-        public void FakulteEkle(int FakulteId, string FakulteAd)// Fakulte Ekleme metodu.
+        public static Dictionary<int, Fakulte> FakulteList = new Dictionary<int, Fakulte>();
+        
+
+        public void FakulteEkle(int FakulteNo, string FakulteAdi)// Fakulte Ekleme metodu.
         {
             try
             {
-                Fakulteler.Add(FakulteId, new Fakulte(FakulteId, FakulteAd));
+                Fakulte fakulte = new Fakulte(FakulteNo, FakulteAdi);
+                FakulteList.Add(FakulteNo,fakulte);
             }
-            catch (ArgumentException)
+           
+            catch (Exception)
             {
+                MessageBox.Show("Fakulte Bulunmaktadır");
+            }
+        }
+        public void FakulteSil(int FakulteNo,string FakulteAdi)
+        {
+            try
+            {
+                FakulteList.Remove(FakulteNo);
+            }
+            
+            catch(Exception e)
+            {
+                MessageBox.Show("Fakulte Bulunmamaktadır!!");
 
-                throw new ArgumentException("Eklemek istenen fakulte mevcut");
             }
         }
     }
