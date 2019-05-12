@@ -60,15 +60,27 @@
       <DependentUpon>BolumEkran.cs</DependentUpon>
     </Compile>
     <Compile Include="Ders.cs" />
-    <Compile Include="DersEkrani.cs">
+    <Compile Include="DersEkle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DersEkrani.Designer.cs">
-      <DependentUpon>DersEkrani.cs</DependentUpon>
+    <Compile Include="DersEkle.Designer.cs">
+      <DependentUpon>DersEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DerseOgrenciEkleme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DerseOgrenciEkleme.Designer.cs">
+      <DependentUpon>DerseOgrenciEkleme.cs</DependentUpon>
     </Compile>
     <Compile Include="Doktora.cs" />
     <Compile Include="Fakulte.cs" />
     <Compile Include="Lisans.cs" />
+    <Compile Include="OgrEleIslemi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OgrEleIslemi.Designer.cs">
+      <DependentUpon>OgrEleIslemi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ogrenci.cs" />
     <Compile Include="OgretimElemani.cs" />
     <Compile Include="OgrIslemleri.cs">
@@ -89,8 +101,14 @@
     <EmbeddedResource Include="BolumEkran.resx">
       <DependentUpon>BolumEkran.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DersEkrani.resx">
-      <DependentUpon>DersEkrani.cs</DependentUpon>
+    <EmbeddedResource Include="DersEkle.resx">
+      <DependentUpon>DersEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DerseOgrenciEkleme.resx">
+      <DependentUpon>DerseOgrenciEkleme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OgrEleIslemi.resx">
+      <DependentUpon>OgrEleIslemi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OgrIslemleri.resx">
       <DependentUpon>OgrIslemleri.cs</DependentUpon>

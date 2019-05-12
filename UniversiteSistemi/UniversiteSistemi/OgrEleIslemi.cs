@@ -10,33 +10,25 @@ using System.Windows.Forms;
 
 namespace UniversiteSistemi
 {
-    public partial class OgrIslemleri : Form
+    public partial class OgrEleIslemi : Form
     {
-        public OgrIslemleri()
+        public OgrEleIslemi()
         {
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void OgrEleIslemi_Load(object sender, EventArgs e)
         {
-            this.Hide();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string duzey = "";
-            
             try
             {
-                if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text!= "")
+                if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "")
                 {
-                    if (radioButton1.Checked)
-                        duzey = "Lisans";
-                    else if (radioButton2.Checked)
-                        duzey = "YuksekLisans";
-                    else if (radioButton3.Checked)
-                        duzey = "Doktora";
-                    Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgrenciEkle(Convert.ToInt32(textBox1.Text), textBox2.Text,textBox3.Text,BolumEkran.BolumNo,duzey);
+                    Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniEkle(Convert.ToInt32(textBox1.Text), textBox2.Text, textBox3.Text, BolumEkran.BolumNo);
                     textBox1.Clear();
                     textBox2.Clear();
                     textBox3.Clear();
@@ -52,7 +44,7 @@ namespace UniversiteSistemi
             }
             catch (Exception)
             {
-                MessageBox.Show("Bolum yanlış girdiniz");
+                MessageBox.Show("Hatalı Giris");
             }
         }
 
@@ -61,16 +53,16 @@ namespace UniversiteSistemi
             try
             {
                 int i = 0;
-                int maxdeger = Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Count;
+                int maxdeger = Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniList.Count;
                 if (maxdeger == 0)
                     throw new Exception();
-                foreach (Ogrenci ogrenci in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Values)
+                foreach (OgretimElemani ogrele in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniList.Values)
                 {
                     i++;
-                    if (ogrenci.ogrenciNo == Convert.ToInt32(textBox4.Text))
+                    if (ogrele.ogretimElemaniNo == Convert.ToInt32(textBox4.Text))
                     {
-                        Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgrenciSil(ogrenci.ogrenciNo);
-                        
+                        Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniSil(ogrele.ogretimElemaniNo);
+
                         break;
                     }
                     if (i == maxdeger)
@@ -80,10 +72,12 @@ namespace UniversiteSistemi
 
                 }
             }
+            
             catch (Exception)
             {
-                MessageBox.Show("Silmek istediğiniz Ogrenci bulunmamaktadır");
+                MessageBox.Show("Silmek İstediğiniz Ogretim Elemani bulunmamaktadır.");
             }
-        }
+}
     }
 }
+   

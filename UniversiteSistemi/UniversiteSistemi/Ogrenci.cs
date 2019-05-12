@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace UniversiteSistemi
 {
@@ -39,6 +40,7 @@ namespace UniversiteSistemi
             get { return OgrenciSube; }
             set { OgrenciSube = value; }
         }
+        
 
 
 
@@ -49,6 +51,9 @@ namespace UniversiteSistemi
             OgrenciSoyadi =Soyad;
             ogrenciBolum = bolum;
             
+            
         }
+
+       
     }
 }

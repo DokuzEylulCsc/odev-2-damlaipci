@@ -16,6 +16,7 @@ namespace UniversiteSistemi
         {
             InitializeComponent();
         }
+        //Universite universite = Universite.Instance();(singleton kullanırsak)
         Universite universite = new Universite();
         public static int FakulteNo;
         bool flag;
@@ -144,6 +145,11 @@ namespace UniversiteSistemi
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

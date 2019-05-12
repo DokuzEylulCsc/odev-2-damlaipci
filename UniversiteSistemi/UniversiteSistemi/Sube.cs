@@ -7,9 +7,18 @@ using System.Threading.Tasks;
 namespace UniversiteSistemi
 {
     class Sube
-    {
-        private Dictionary<string, OgretimElemani> OgretimElemaniList = new Dictionary<string, OgretimElemani>();
-        private Dictionary<string, Ogrenci> DerseKayitliOgrenciList = new Dictionary<string, Ogrenci>();
-        
+    { //kullanmadım.
+        private int subeNo;
+
+        public int  SubeNo
+        {
+            get { return subeNo; }
+            set { subeNo = value; }
+        }
+        public Sube(int subeNo)
+        {
+            SubeNo = subeNo;
+        }
+
     }
 }

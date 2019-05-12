@@ -11,6 +11,7 @@ namespace UniversiteSistemi
         private int OgretimElemaniNo;
         private string OgretimElemaniAdi;
         private string OgretimElemaniSoyadi;
+        private int OgretimElemaniBolum;
 
         public int ogretimElemaniNo
         {
@@ -27,12 +28,19 @@ namespace UniversiteSistemi
             get { return OgretimElemaniSoyadi; }
             set { OgretimElemaniSoyadi = value; }
         }
+        public int ogretimelemaniBolum
+        {
+            get { return OgretimElemaniBolum; }
+            set { OgretimElemaniBolum = value; }
+        }
 
-        public OgretimElemani(int No, string Ad, string Soyad)
+        public OgretimElemani(int No, string Ad, string Soyad,int bolum)
         {
             OgretimElemaniNo = No;
             OgretimElemaniAdi = Ad;
             OgretimElemaniSoyadi = Soyad;
+            OgretimElemaniBolum = bolum;
+
 
         }
     }

@@ -9,15 +9,20 @@ namespace UniversiteSistemi
 {
     class Yazdir
     {
-        public static void Yazma(Exception e)
+        
+        public static void Yazma(Ders de)
         {
-            string dosya_yolu = @"LİSTE.txt";
-            FileStream fs = new FileStream(dosya_yolu, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            StreamWriter sw = new StreamWriter(fs);
-            sw.WriteLine(e.Message);
+            DateTime t = new DateTime();
+            StreamWriter sw = File.AppendText(@"LİSTE.txt");
+            sw.WriteLine(de.dersKodu+" "+de.dersAdi+" "+DateTime.Today);
+            sw.WriteLine("Ogrenci Listesi:");
+            foreach(Ogrenci o in de.DersteKayitliOgrenciList.Values)
+            {
+                sw.WriteLine(o.ogrenciBolum + " " + o.ogrenciNo + " " + o.ogrenciAdi + " " + o.ogrenciSoyadi);
+            }
             sw.Flush();
             sw.Close();
-            fs.Close();
+           
         }
     }
 

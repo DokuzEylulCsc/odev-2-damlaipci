@@ -12,7 +12,7 @@ namespace UniversiteSistemi
        
         public Dictionary<int,OgretimElemani> OgretimElemaniList = new Dictionary<int, OgretimElemani>();
         public Dictionary<int, Ogrenci> BolumdekiOgrencilerList = new Dictionary<int, Ogrenci>();
-        public Dictionary<int, Ders> DersKayit = new Dictionary<int, Ders>();
+        public Dictionary<int, Ders> DersList = new Dictionary<int, Ders>();
         public Dictionary<int, Sube> SubeList = new Dictionary<int, Sube>();
         private int BolumNo;
         private string BolumAdi;
@@ -52,9 +52,13 @@ namespace UniversiteSistemi
 
                 BolumdekiOgrencilerList.Add(OgrenciNo,ogrenci); //aşağısı
             }
+            catch(FormatException)
+            {
+                MessageBox.Show("Hatali Giris");
+            }
             catch (Exception fe)
             {
-                MessageBox.Show("Hatali Giriş");
+                MessageBox.Show("Ogrenci bulunmakta");
             }
         }
         public void OgrenciSil(int id)
@@ -65,15 +69,11 @@ namespace UniversiteSistemi
         {
             try
             {
-                Ders derskayit = new Ders(DersKodu,DersAdi);
-                DersKayit.Add(DersKodu,derskayit);
-                
+                Ders derskayit = new Ders(DersKodu, DersAdi);
+                DersList.Add(DersKodu, derskayit);
+
             }
-            catch(FormatException fe)
-            {
-                throw new FormatException("Hatali Giris");
-            }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw new Exception("Ders Bulunmakta");
             }
@@ -85,7 +85,7 @@ namespace UniversiteSistemi
         {
             try
             {
-                DersKayit.Remove(DersKodu);
+                DersList.Remove(DersKodu);
             }
             catch (Exception fe)
             {
@@ -94,22 +94,17 @@ namespace UniversiteSistemi
            
         }
 
-        public void OgretimElemani(int No, string Ad, string Soyad)
+        public void OgretimElemaniEkle(int No, string Ad, string Soyad,int bolum)
         {
             try
             {
-                OgretimElemani ogrele = new OgretimElemani(No, Ad, Soyad);
+                OgretimElemani ogrele = new OgretimElemani(No, Ad, Soyad,bolum);
                 OgretimElemaniList.Add(No,ogrele);
             }
-            catch (FormatException fe)
-            {
-
-                throw new FormatException("Hatali Giris");
-
-            }
+           
             catch(Exception e)
             {
-                throw new Exception("Ogretim Elemani Bulunmakta!!");
+                MessageBox.Show("Ogretim Elemani Bulunmakta!!");
             }
         }
 
@@ -133,8 +128,7 @@ namespace UniversiteSistemi
             }
         }
         
-        //public void SubeEkle(int SubeNo)
-        //public void SubeSil(int SubeNo
+        
         
     }
 }

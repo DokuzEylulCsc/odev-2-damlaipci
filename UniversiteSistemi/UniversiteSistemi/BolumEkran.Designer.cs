@@ -111,7 +111,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.Location = new System.Drawing.Point(331, 460);
+            this.label4.Location = new System.Drawing.Point(491, 444);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(304, 25);
             this.label4.TabIndex = 13;
@@ -121,16 +121,16 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(366, 536);
+            this.label3.Location = new System.Drawing.Point(491, 522);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(269, 25);
+            this.label3.Size = new System.Drawing.Size(305, 25);
             this.label3.TabIndex = 12;
-            this.label3.Text = "İlerlemek için Bolum No Girin:";
+            this.label3.Text = "Ders Eklemek için Bolum No Girin:";
             // 
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(650, 457);
+            this.textBox3.Location = new System.Drawing.Point(828, 443);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(122, 28);
             this.textBox3.TabIndex = 14;
@@ -138,7 +138,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox4.Location = new System.Drawing.Point(650, 533);
+            this.textBox4.Location = new System.Drawing.Point(828, 519);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(122, 28);
             this.textBox4.TabIndex = 15;
@@ -155,7 +155,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(810, 433);
+            this.button3.Location = new System.Drawing.Point(987, 433);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(125, 52);
             this.button3.TabIndex = 17;
@@ -165,12 +165,13 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(810, 509);
+            this.button4.Location = new System.Drawing.Point(987, 509);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(125, 52);
             this.button4.TabIndex = 18;
             this.button4.Text = "İLERLE";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button5
             // 
@@ -188,7 +189,7 @@
             this.OgrenciListesi.ItemHeight = 16;
             this.OgrenciListesi.Location = new System.Drawing.Point(258, 12);
             this.OgrenciListesi.Name = "OgrenciListesi";
-            this.OgrenciListesi.Size = new System.Drawing.Size(207, 212);
+            this.OgrenciListesi.Size = new System.Drawing.Size(608, 100);
             this.OgrenciListesi.TabIndex = 20;
             this.OgrenciListesi.SelectedIndexChanged += new System.EventHandler(this.OgrenciListesi_SelectedIndexChanged);
             // 
@@ -198,7 +199,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(183, 46);
             this.button6.TabIndex = 21;
-            this.button6.Text = "GOSTER";
+            this.button6.Text = "Ogrenci Goster";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -206,23 +207,24 @@
             // 
             this.OgretimElemanlari.FormattingEnabled = true;
             this.OgretimElemanlari.ItemHeight = 16;
-            this.OgretimElemanlari.Location = new System.Drawing.Point(752, 12);
+            this.OgretimElemanlari.Location = new System.Drawing.Point(258, 124);
             this.OgretimElemanlari.Name = "OgretimElemanlari";
-            this.OgretimElemanlari.Size = new System.Drawing.Size(183, 212);
+            this.OgretimElemanlari.Size = new System.Drawing.Size(608, 100);
             this.OgretimElemanlari.TabIndex = 22;
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(752, 244);
+            this.button7.Location = new System.Drawing.Point(683, 244);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(183, 46);
             this.button7.TabIndex = 23;
-            this.button7.Text = "GOSTER";
+            this.button7.Text = "OgrEle Goster";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(476, 74);
+            this.button8.Location = new System.Drawing.Point(955, 126);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(157, 46);
             this.button8.TabIndex = 24;
@@ -232,17 +234,18 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(752, 296);
+            this.button9.Location = new System.Drawing.Point(955, 178);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(183, 46);
+            this.button9.Size = new System.Drawing.Size(157, 46);
             this.button9.TabIndex = 25;
             this.button9.Text = "OgrEle Islemleri";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.Location = new System.Drawing.Point(476, 40);
+            this.textBox5.Location = new System.Drawing.Point(955, 92);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(157, 28);
             this.textBox5.TabIndex = 26;
@@ -251,18 +254,18 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(471, 12);
+            this.label5.Location = new System.Drawing.Point(878, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 25);
+            this.label5.Size = new System.Drawing.Size(269, 25);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Eklenilicek Bölüm";
+            this.label5.Text = "Eklenmek İstenilen Bölüm No:";
             // 
             // BolumEkran
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
-            this.ClientSize = new System.Drawing.Size(972, 615);
+            this.ClientSize = new System.Drawing.Size(1159, 615);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.button9);

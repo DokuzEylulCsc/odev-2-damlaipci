@@ -12,7 +12,7 @@ namespace UniversiteSistemi
 {
     public partial class BolumEkran : Form
     {
-      
+
         public BolumEkran()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace UniversiteSistemi
             {
                 MessageBox.Show("Girişte Format Hatası");
             }
-            catch (Exception )
+            catch (Exception)
             {
                 MessageBox.Show("Hata");
             }
@@ -105,10 +105,25 @@ namespace UniversiteSistemi
 
         private void button8_Click(object sender, EventArgs e)
         {
-            BolumEkran.BolumNo = Convert.ToInt32(textBox5.Text);
-            OgrIslemleri ogrislemleri = new OgrIslemleri();
-            ogrislemleri.Show();
+
+            
+            try
+            {
+                BolumEkran.BolumNo = Convert.ToInt32(textBox5.Text);
+                OgrIslemleri ogrislemleri = new OgrIslemleri();
+                ogrislemleri.Show();
+                if (textBox5 == null)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bolum numarası girin");
+            }
         }
+    
+
 
         private void OgrenciListesi_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -116,16 +131,96 @@ namespace UniversiteSistemi
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {// try catch ekle
-            OgrenciListesi.Items.Clear();
-            foreach(Ogrenci ogre in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Values)
+        {
+
+            try
             {
-                OgrenciListesi.Items.Add(ogre.ogrenciNo + " " + ogre.ogrenciAdi + " " + ogre.ogrenciSoyadi + " " + ogre.ogrenciBolum + " " + ogre.GetType().ToString());
+                OgrenciListesi.Items.Clear();
+                foreach (Ogrenci ogre in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Values)
+                {
+                    OgrenciListesi.Items.Add("OgrenciBolum:" + ogre.ogrenciBolum+ "-Ogrenci NO:"+ogre.ogrenciNo + "-Ogrenci Adı:" + ogre.ogrenciAdi + "-Ogrenci Soyadi:" + ogre.ogrenciSoyadi + "-Duzeyi:" + ogre.GetType().ToString());
+                }
+                if(OgrenciListesi==null)
+                {
+                    throw new Exception();
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ogrenci Kayıt Etmediniz");
             }
         }
 
         private void BolumEkran_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BolumEkran.BolumNo = Convert.ToInt32(textBox5.Text);
+                OgrEleIslemi ogreleislemleri = new OgrEleIslemi();
+                ogreleislemleri.Show();
+                if(textBox5==null)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Bolum numarası girin");
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                OgretimElemanlari.Items.Clear();
+                foreach (OgretimElemani ogrele in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniList.Values)
+                {
+                    OgretimElemanlari.Items.Add("OgrEleBolum:" +ogrele.ogretimelemaniBolum + "-OgrEleNo:" + ogrele.ogretimElemaniNo + "-OgrEleAdi:" + ogrele.ogretimElemaniAd+ "-OgrEleSoyadi:" + ogrele.ogretimElemaniSoyad);
+                }
+                if (OgretimElemanlari == null)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("ogretim Elemani Kayıt Etmediniz");
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int maxdeger = Universite.FakulteList[Baslangıc.FakulteNo].BolumList.Count, i = 0;
+                if (maxdeger == 0)
+                    throw new Exception();
+                BolumNo = Convert.ToInt32(textBox4.Text);
+                foreach (Bolum b in Universite.FakulteList[Baslangıc.FakulteNo].BolumList.Values)
+                {
+                    i++;
+                    if (b.bolumNo == BolumNo)
+                    {
+                        this.Hide();
+                        DersEkle de = new DersEkle();
+                        de.Show();
+                        break;
+                    }
+                    if (i == maxdeger)
+                    {
+                        throw new Exception();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("HATA!!");
+            }
         }
     }
 }

@@ -122,11 +122,12 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label3.Location = new System.Drawing.Point(316, 493);
+            this.label3.Location = new System.Drawing.Point(264, 493);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(276, 25);
+            this.label3.Size = new System.Drawing.Size(328, 25);
             this.label3.TabIndex = 8;
-            this.label3.Text = "İlerlemek için Fakülte No Girin:";
+            this.label3.Text = "Bolum Eklemek için Fakülte No Girin:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // NoTxtBox
             // 
