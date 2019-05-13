@@ -81,9 +81,9 @@ namespace UniversiteSistemi
 
         private void button3_Click(object sender, EventArgs e)
         {
-            BolumEkran be = new BolumEkran();
+            
             this.Hide();
-            be.Show();
+            
         }
     }
 }
