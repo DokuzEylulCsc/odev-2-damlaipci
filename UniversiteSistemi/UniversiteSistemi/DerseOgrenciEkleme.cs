@@ -39,7 +39,9 @@ namespace UniversiteSistemi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+
 
                 foreach (Ogrenci o in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Values)
                 {
@@ -48,7 +50,23 @@ namespace UniversiteSistemi
                         Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].OgrenciAta(o.ogrenciNo, o);
                     }
                 }
-                
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ogrenci No Giriniz");
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            DersEkle de = new DersEkle();
+            this.Hide();
+            de.Show();
+        }
+
+        private void DerseOgrenciEkleme_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

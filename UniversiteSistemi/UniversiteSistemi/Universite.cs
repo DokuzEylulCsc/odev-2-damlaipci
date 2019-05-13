@@ -10,21 +10,21 @@ namespace UniversiteSistemi
     class Universite
     {
         public static Dictionary<int, Fakulte> FakulteList = new Dictionary<int, Fakulte>();
-        //private Universite()
-        //{
+        private Universite()
+        {
 
-        //}//singleton kullanmaya çalıştım
-        //private static Universite instance;
+        }
+        private static Universite instance;
 
-       
-        //public static Universite GetInstance()
-        //{
-        //    if (instance == null)
-        //    {
-        //        instance = new Universite();
-        //    }
-        //    return instance;
-        //}
+
+        public static Universite GetInstance()//Singleton desing pattern kullandım
+        {
+            if (instance == null)
+            {
+                instance = new Universite();
+            }
+            return instance;
+        }
 
         public void FakulteEkle(int FakulteNo, string FakulteAdi)// Fakulte Ekleme metodu.
         {

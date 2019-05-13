@@ -12,7 +12,7 @@ namespace UniversiteSistemi
         
         public static void Yazma(Ders de)
         {
-            DateTime t = new DateTime();
+            
             StreamWriter sw = File.AppendText(@"LİSTE.txt");
             sw.WriteLine(de.dersKodu+" "+de.dersAdi+" "+DateTime.Today);
             sw.WriteLine("Ogrenci Listesi:");

@@ -39,7 +39,7 @@ namespace UniversiteSistemi
             }
             catch (Exception)
             {
-                MessageBox.Show("Hata");
+                MessageBox.Show("Ders Giriniz");
             }
         }
 
@@ -136,6 +136,97 @@ namespace UniversiteSistemi
             foreach (Ders de in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList.Values)
             {
                 Yazdir.Yazma(de);
+            }
+        }
+
+        private void button7_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                int maxdeger = Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Count;
+                if (maxdeger == 0)
+                    throw new Exception();
+                foreach (Ogrenci ogr in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].DersteKayitliOgrenciList.Values)
+                {
+                    i++;
+                    if (ogr.ogrenciNo == Convert.ToInt32(textBox4.Text))
+                    {
+                        Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].OgrenciSilme(ogr.ogrenciNo);
+
+                        break;
+                    }
+                    if (i == maxdeger)
+                    {
+                        throw new Exception();
+                    }
+
+                }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Silmek İstediğiniz Ogretim Elemani bulunmamaktadır.");
+            }
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DersEkle.DersNo = Convert.ToInt32(textBox6.Text);
+                DerseOgretimElemaniEkleme doge = new DerseOgretimElemaniEkleme();
+                doge.Show();
+                if (textBox6 == null)
+                {
+                    throw new Exception();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Ders numarası girin");
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int i = 0;
+                int maxdeger = Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniList.Count;
+                if (maxdeger == 0)
+                    throw new Exception();
+                foreach (OgretimElemani ogr in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].DerseKayitliOgretimElemani.Values)
+                {
+                    i++;
+                    if (ogr.ogretimElemaniNo == Convert.ToInt32(textBox5.Text))
+                    {
+                        Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].OgretimElemaniSilme(ogr.ogretimElemaniNo);
+
+                        break;
+                    }
+                    if (i == maxdeger)
+                    {
+                        throw new Exception();
+                    }
+
+                }
+            }
+
+            catch (Exception)
+            {
+                MessageBox.Show("Silmek İstediğiniz Ogretim Elemani bulunmamaktadır.");
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            DerseEklenenOgretimElemanlari.Items.Clear();
+            DersNo = Convert.ToInt32(textBox6.Text);
+            foreach (OgretimElemani o in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].DerseKayitliOgretimElemani.Values)
+            {
+                DerseEklenenOgrenciler.Items.Add("OgrEleBolum:"+o.ogretimelemaniBolum + "--OgrElemaniNo: " + o.ogretimElemaniNo + "--OgrEleAd: " + o.ogretimElemaniAd+ "--OgrEleSoyad: " + o.ogretimElemaniSoyad + " " + o.GetType());
+
             }
         }
     }

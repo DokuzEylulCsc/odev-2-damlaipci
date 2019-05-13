@@ -52,7 +52,7 @@ namespace UniversiteSistemi
             }
             catch (Exception)
             {
-                MessageBox.Show("Bolum yanlış girdiniz");
+                MessageBox.Show("Ogrenci Giriniz");
             }
         }
 
@@ -84,6 +84,11 @@ namespace UniversiteSistemi
             {
                 MessageBox.Show("Silmek istediğiniz Ogrenci bulunmamaktadır");
             }
+        }
+
+        private void OgrIslemleri_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

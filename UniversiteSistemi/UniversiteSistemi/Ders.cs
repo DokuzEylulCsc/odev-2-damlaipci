@@ -11,6 +11,7 @@ namespace UniversiteSistemi
     class Ders
     {
         public Dictionary<int, Ogrenci> DersteKayitliOgrenciList = new Dictionary<int, Ogrenci>();
+        public Dictionary<int, OgretimElemani> DerseKayitliOgretimElemani = new Dictionary<int, OgretimElemani>();
         public Dictionary<int, Sube> SubeList = new Dictionary<int, Sube>();
         private int DersKodu;
         private string DersAdi;
@@ -46,7 +47,40 @@ namespace UniversiteSistemi
             }
         }
         
-        
+        public void OgrenciSilme(int ogrenciNo)
+        {
+            try
+            {
+                DersteKayitliOgrenciList.Remove(ogrenciNo);
+            }
+            catch
+            {
+                MessageBox.Show("Silinmek istenen ogrenci bulunamamktadır");
+            }
+        }
+        public void OgretimElemaniAtama(int OgretimElemaniNo, OgretimElemani ogr)
+        {
+            try
+            {
+                DerseKayitliOgretimElemani.Add(OgretimElemaniNo, ogr);
 
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Derste Ogrenci Bulunmakta!!");
+            }
+        }
+
+        public void OgretimElemaniSilme(int OgretimElemaniNo)
+        {
+            try
+            {
+                DerseKayitliOgretimElemani.Remove(OgretimElemaniNo);
+            }
+            catch
+            {
+                MessageBox.Show("Silinmek istenen ogrenci bulunamamktadır");
+            }
+        }
     }
 }

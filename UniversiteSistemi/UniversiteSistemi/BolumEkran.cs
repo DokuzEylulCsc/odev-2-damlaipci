@@ -46,7 +46,7 @@ namespace UniversiteSistemi
             }
             catch (Exception)
             {
-                MessageBox.Show("Hata");
+                MessageBox.Show("Bolum No Giriniz");
             }
         }
 
@@ -138,7 +138,7 @@ namespace UniversiteSistemi
                 OgrenciListesi.Items.Clear();
                 foreach (Ogrenci ogre in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Values)
                 {
-                    OgrenciListesi.Items.Add("OgrenciBolum:" + ogre.ogrenciBolum+ "-Ogrenci NO:"+ogre.ogrenciNo + "-Ogrenci Adı:" + ogre.ogrenciAdi + "-Ogrenci Soyadi:" + ogre.ogrenciSoyadi + "-Duzeyi:" + ogre.GetType().ToString());
+                    OgrenciListesi.Items.Add("OgrenciBolum:" + ogre.ogrenciBolum+ "--Ogrenci NO:"+ogre.ogrenciNo + "--Ogrenci Adı:" + ogre.ogrenciAdi + "--Ogrenci Soyadi:" + ogre.ogrenciSoyadi + "-Duzeyi:" + ogre.GetType().ToString());
                 }
                 if(OgrenciListesi==null)
                 {

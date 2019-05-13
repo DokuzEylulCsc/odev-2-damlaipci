@@ -42,6 +42,17 @@
             this.DerseEklenenOgrenciler = new System.Windows.Forms.ListBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.button9 = new System.Windows.Forms.Button();
+            this.DerseEklenenOgretimElemanlari = new System.Windows.Forms.ListBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Dersler
@@ -122,7 +133,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(705, 29);
+            this.textBox3.Location = new System.Drawing.Point(770, 26);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(122, 28);
             this.textBox3.TabIndex = 22;
@@ -141,7 +152,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(855, 27);
+            this.button4.Location = new System.Drawing.Point(908, 25);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(89, 30);
             this.button4.TabIndex = 23;
@@ -153,7 +164,7 @@
             // 
             this.DerseEklenenOgrenciler.FormattingEnabled = true;
             this.DerseEklenenOgrenciler.ItemHeight = 16;
-            this.DerseEklenenOgrenciler.Location = new System.Drawing.Point(363, 63);
+            this.DerseEklenenOgrenciler.Location = new System.Drawing.Point(363, 92);
             this.DerseEklenenOgrenciler.Name = "DerseEklenenOgrenciler";
             this.DerseEklenenOgrenciler.Size = new System.Drawing.Size(669, 164);
             this.DerseEklenenOgrenciler.TabIndex = 24;
@@ -178,12 +189,126 @@
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(908, 59);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(89, 30);
+            this.button7.TabIndex = 29;
+            this.button7.Text = "Sil";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click_1);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox4.Location = new System.Drawing.Point(770, 61);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(122, 28);
+            this.textBox4.TabIndex = 28;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label4.Location = new System.Drawing.Point(358, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(354, 25);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Silmek İstediğiniz Öğrencinin Numarası:";
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(908, 319);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(89, 30);
+            this.button8.TabIndex = 37;
+            this.button8.Text = "Sil";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox5.Location = new System.Drawing.Point(770, 316);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(122, 28);
+            this.textBox5.TabIndex = 36;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.Location = new System.Drawing.Point(358, 322);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(404, 25);
+            this.label5.TabIndex = 35;
+            this.label5.Text = "Silmek İstediğiniz Öğretim Elemani Numarası:";
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(1038, 369);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(91, 66);
+            this.button9.TabIndex = 34;
+            this.button9.Text = "Goster";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // DerseEklenenOgretimElemanlari
+            // 
+            this.DerseEklenenOgretimElemanlari.FormattingEnabled = true;
+            this.DerseEklenenOgretimElemanlari.ItemHeight = 16;
+            this.DerseEklenenOgretimElemanlari.Location = new System.Drawing.Point(363, 350);
+            this.DerseEklenenOgretimElemanlari.Name = "DerseEklenenOgretimElemanlari";
+            this.DerseEklenenOgretimElemanlari.Size = new System.Drawing.Size(669, 164);
+            this.DerseEklenenOgretimElemanlari.TabIndex = 33;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(908, 280);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(89, 30);
+            this.button10.TabIndex = 32;
+            this.button10.Text = "Ekle";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox6.Location = new System.Drawing.Point(770, 285);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(122, 28);
+            this.textBox6.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label6.Location = new System.Drawing.Point(358, 288);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(406, 25);
+            this.label6.TabIndex = 30;
+            this.label6.Text = "Ogretim Elemani Eklemek İstediğiniz Ders No:";
+            // 
             // DersEkle
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Salmon;
             this.ClientSize = new System.Drawing.Size(1153, 575);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button9);
+            this.Controls.Add(this.DerseEklenenOgretimElemanlari);
+            this.Controls.Add(this.button10);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.DerseEklenenOgrenciler);
@@ -222,5 +347,16 @@
         private System.Windows.Forms.ListBox DerseEklenenOgrenciler;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.ListBox DerseEklenenOgretimElemanlari;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label6;
     }
 }

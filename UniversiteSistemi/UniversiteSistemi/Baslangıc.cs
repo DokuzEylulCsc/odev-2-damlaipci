@@ -16,8 +16,8 @@ namespace UniversiteSistemi
         {
             InitializeComponent();
         }
-        //Universite universite = Universite.Instance();(singleton kullanırsak)
-        Universite universite = new Universite();
+        Universite universite = Universite.GetInstance();
+       
         public static int FakulteNo;
         bool flag;
         private void button1_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace UniversiteSistemi
             }
             catch(Exception)
             {
-                MessageBox.Show("HATA!!");
+                MessageBox.Show("Fakulte No Giriniz");
             }
             
             
