@@ -15,22 +15,22 @@ namespace UniversiteSistemi
         private string OgrenciSoyadi;
         private int Ogrencibolumu;
 
-        public int ogrenciNo
+        public int ogrenciNo//kapsülleme
         {
             get { return OgrenciNo; }
             set { OgrenciNo = value; }
         }
-        public string ogrenciAdi
+        public string ogrenciAdi//kapsülleme
         {
             get { return OgrenciAdi; }
             set { OgrenciAdi = value; }
         }
-        public string ogrenciSoyadi
+        public string ogrenciSoyadi//kapsülleme
         {
             get { return OgrenciSoyadi; }
             set { OgrenciSoyadi = value; }
         }
-        public int ogrenciBolum
+        public int ogrenciBolum//kapsülleme
         {
             get { return Ogrencibolumu; }
             set { Ogrencibolumu = value; }
@@ -44,7 +44,7 @@ namespace UniversiteSistemi
 
 
 
-        public Ogrenci(int No, string Ad, string Soyad, int bolum)
+        public Ogrenci(int No, string Ad, string Soyad, int bolum)//constructor
         {
             OgrenciNo= No;
             OgrenciAdi = Ad;

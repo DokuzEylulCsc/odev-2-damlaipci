@@ -9,34 +9,38 @@ namespace UniversiteSistemi
 {
     class Fakulte
     {
-        public Dictionary<int, Bolum> BolumList = new Dictionary<int, Bolum>();
+        public Dictionary<int, Bolum> BolumList = new Dictionary<int, Bolum>();//bolum açacağım için bolum listesi yaptım
         private int FakulteNo;
         private string FakulteAdi;
 
-        public int fakulteNo
+        public int fakulteNo//kapsülledim
         {
             get { return FakulteNo; }
             set { FakulteNo = value; }
         }
-        public string fakulteAdi
+        public string fakulteAdi//kapsülledim
         {
             get { return FakulteAdi; }
             set { FakulteAdi = value; }
         }
 
-        public Fakulte(int No, string Ad)
+        public Fakulte(int No, string Ad)//constructor
         {
             FakulteNo = No;
             FakulteAdi = Ad;
         }
 
-        public void BolumEkle(int BolumNo, string BolumAdi)
+        public void BolumEkle(int BolumNo, string BolumAdi)//fakulteye bolum ekleme
         {
-            bool flag;
+            //bool flag;
             try
             {
                 Bolum bolum= new Bolum(BolumNo, BolumAdi);
                 BolumList.Add(BolumNo,bolum);
+            }
+            catch(FormatException)
+            {
+                MessageBox.Show("format hatası");
             }
            
             catch(Exception)
@@ -45,7 +49,7 @@ namespace UniversiteSistemi
             }
         }
 
-        public void BolumSil(int BolumID,string BolumAdi)
+        public void BolumSil(int BolumID,string BolumAdi)//fakulteden bolum silme
         {
             try
             {

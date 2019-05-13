@@ -19,7 +19,7 @@ namespace UniversiteSistemi
 
         private void button3_Click(object sender, EventArgs e)
         {
-            try
+            try//derse eklenecek öğrencilerin numaralarına rahat ulaşabilmek için tekrar bölümdeki öğrencileri gösteren buton
             {
                 bolumogrenciler.Items.Clear();
                 foreach (Ogrenci ogre in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].BolumdekiOgrencilerList.Values)
@@ -39,7 +39,7 @@ namespace UniversiteSistemi
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
+            try//dersse bölümde bulunan öğrencilerden atama
             {
 
 
@@ -47,7 +47,7 @@ namespace UniversiteSistemi
                 {
                     if (Convert.ToInt32(textBox1.Text) == o.ogrenciNo)
                     {
-                        Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].OgrenciAta(o.ogrenciNo, o);
+                        Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].OgrenciAta(o.ogrenciNo, o);//ogrenci ata butonu çağırılır
                     }
                 }
             }
@@ -59,9 +59,9 @@ namespace UniversiteSistemi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DersEkle de = new DersEkle();
+            
             this.Hide();
-            de.Show();
+            
         }
 
         private void DerseOgrenciEkleme_Load(object sender, EventArgs e)

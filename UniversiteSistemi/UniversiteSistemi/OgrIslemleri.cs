@@ -17,7 +17,7 @@ namespace UniversiteSistemi
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//fromu gizler
         {
             this.Hide();
         }
@@ -26,7 +26,7 @@ namespace UniversiteSistemi
         {
             string duzey = "";
             
-            try
+            try//düzeyine görre öğrenci ekleme yapar
             {
                 if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text!= "")
                 {
@@ -56,7 +56,7 @@ namespace UniversiteSistemi
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//öğrenciyi siler
         {
             try
             {

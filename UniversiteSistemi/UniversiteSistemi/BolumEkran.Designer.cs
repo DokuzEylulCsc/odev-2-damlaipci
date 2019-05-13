@@ -224,7 +224,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(955, 126);
+            this.button8.Location = new System.Drawing.Point(933, 126);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(157, 46);
             this.button8.TabIndex = 24;
@@ -234,7 +234,7 @@
             // 
             // button9
             // 
-            this.button9.Location = new System.Drawing.Point(955, 178);
+            this.button9.Location = new System.Drawing.Point(933, 178);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(157, 46);
             this.button9.TabIndex = 25;
@@ -245,7 +245,7 @@
             // textBox5
             // 
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox5.Location = new System.Drawing.Point(955, 92);
+            this.textBox5.Location = new System.Drawing.Point(933, 92);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(157, 28);
             this.textBox5.TabIndex = 26;
@@ -254,11 +254,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Yu Gothic UI", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.Location = new System.Drawing.Point(878, 64);
+            this.label5.Location = new System.Drawing.Point(928, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(269, 25);
+            this.label5.Size = new System.Drawing.Size(181, 50);
             this.label5.TabIndex = 27;
-            this.label5.Text = "Eklenmek İstenilen Bölüm No:";
+            this.label5.Text = "İşlem Yapılmak\r\nİstenilen Bölüm No:";
             // 
             // BolumEkran
             // 

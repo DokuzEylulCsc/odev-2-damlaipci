@@ -17,7 +17,7 @@ namespace UniversiteSistemi
             InitializeComponent();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//boolumdeki öğrettim elemanlarına daha rahat ulaşmak için gösterme butonu
         {
             try
             {
@@ -37,7 +37,7 @@ namespace UniversiteSistemi
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//bolumde bulunan öğretim elemanlarını atama
         { try
             {
 
@@ -58,9 +58,7 @@ namespace UniversiteSistemi
 
         private void button2_Click(object sender, EventArgs e)
         {
-            DersEkle de = new DersEkle();
             this.Hide();
-            de.Show();
         }
 
         private void DerseOgretimElemaniEkleme_Load(object sender, EventArgs e)

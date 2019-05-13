@@ -13,28 +13,28 @@ namespace UniversiteSistemi
         private string OgretimElemaniSoyadi;
         private int OgretimElemaniBolum;
 
-        public int ogretimElemaniNo
+        public int ogretimElemaniNo//kapsülleme
         {
             get { return OgretimElemaniNo; }
             set { OgretimElemaniNo = value; }
         }
-        public string ogretimElemaniAd
+        public string ogretimElemaniAd//kapsülleme
         {
             get { return OgretimElemaniAdi; }
             set { OgretimElemaniAdi = value; }
         }
-        public string ogretimElemaniSoyad
+        public string ogretimElemaniSoyad//kaspülleme
         {
             get { return OgretimElemaniSoyadi; }
             set { OgretimElemaniSoyadi = value; }
         }
-        public int ogretimelemaniBolum
+        public int ogretimelemaniBolum//kapsülleme
         {
             get { return OgretimElemaniBolum; }
             set { OgretimElemaniBolum = value; }
         }
 
-        public OgretimElemani(int No, string Ad, string Soyad,int bolum)
+        public OgretimElemani(int No, string Ad, string Soyad,int bolum)//constructor
         {
             OgretimElemaniNo = No;
             OgretimElemaniAdi = Ad;

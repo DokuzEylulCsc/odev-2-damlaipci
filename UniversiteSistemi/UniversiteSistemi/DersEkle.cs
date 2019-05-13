@@ -22,15 +22,15 @@ namespace UniversiteSistemi
         {
             try
             {
-                if (textBox1.Text != "" && textBox2.Text != "")
+                if (textBox1.Text != "" && textBox2.Text != "")//textboxlar boş değilse
                 {
-                    Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersEkle(Convert.ToInt32(textBox1.Text),textBox2.Text);
+                    Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersEkle(Convert.ToInt32(textBox1.Text),textBox2.Text);//ders ekleme metodunun çağırılması
                     textBox1.Clear();
                     textBox2.Clear();
                 }
                 else
                 {
-                    throw new Exception();
+                    throw new Exception();//bossa hata verme
                 }
             }
             catch (FormatException)
@@ -48,10 +48,10 @@ namespace UniversiteSistemi
             Dersler.Items.Clear();
             try
             {
-                foreach (Ders d in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList.Values)
+                foreach (Ders d in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList.Values)//fakultenin içinde olan bolume eklenen dersleri göstermek için
                 {
-                    Dersler.Items.Add(d.dersKodu + " - " + d.dersAdi);
-                    if (Dersler == null)
+                    Dersler.Items.Add(d.dersKodu + " - " + d.dersAdi);//ders kodu ve adını ekler 
+                    if (Dersler == null)//bossa hata verme
                     {
                         throw new Exception();
                     }
@@ -96,10 +96,10 @@ namespace UniversiteSistemi
         {
             try
             {
-                DersEkle.DersNo = Convert.ToInt32(textBox3.Text);
+                DersEkle.DersNo = Convert.ToInt32(textBox3.Text);//Ders no yu textbox a eşitler
                 DerseOgrenciEkleme doe = new DerseOgrenciEkleme();
-                doe.Show();
-                if (textBox3 == null)
+                doe.Show();//derse ogrenci ekleme formumun açılması
+                if (textBox3 == null)//bos olursa hata 
                 {
                     throw new Exception();
                 }
@@ -115,7 +115,7 @@ namespace UniversiteSistemi
             
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void button3_Click_1(object sender, EventArgs e)//derse atanan öğrenciler listesini gösterme butonu
         {
             DerseEklenenOgrenciler.Items.Clear();
             DersNo = Convert.ToInt32(textBox3.Text);
@@ -131,15 +131,16 @@ namespace UniversiteSistemi
            
         }
 
-        private void button6_Click_1(object sender, EventArgs e)
+        private void button6_Click_1(object sender, EventArgs e)//dosyaya yazdırma metodu
         {
             foreach (Ders de in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList.Values)
             {
                 Yazdir.Yazma(de);
             }
+            MessageBox.Show("Yazdirildi");
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        private void button7_Click_1(object sender, EventArgs e)//derse atanan öğrenciyi dersten silme
         {
             try
             {
@@ -174,9 +175,9 @@ namespace UniversiteSistemi
         {
             try
             {
-                DersEkle.DersNo = Convert.ToInt32(textBox6.Text);
+                DersEkle.DersNo = Convert.ToInt32(textBox6.Text);//ders no yu textboxa eşitleme
                 DerseOgretimElemaniEkleme doge = new DerseOgretimElemaniEkleme();
-                doge.Show();
+                doge.Show();//ogretim elemanı atama sayfasını gösterme
                 if (textBox6 == null)
                 {
                     throw new Exception();
@@ -188,9 +189,9 @@ namespace UniversiteSistemi
             }
         }
 
-        private void button8_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)//derse atanan öğretim elemanını silme
         {
-            try
+            try//silme buttonlarının içleri birbirine benzemektedir 
             {
                 int i = 0;
                 int maxdeger = Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].OgretimElemaniList.Count;
@@ -219,14 +220,21 @@ namespace UniversiteSistemi
             }
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void button9_Click(object sender, EventArgs e)//Derse atanan öğretim elemanını gösterme butonu
         {
-            DerseEklenenOgretimElemanlari.Items.Clear();
-            DersNo = Convert.ToInt32(textBox6.Text);
-            foreach (OgretimElemani o in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].DerseKayitliOgretimElemani.Values)
+            try
             {
-                DerseEklenenOgrenciler.Items.Add("OgrEleBolum:"+o.ogretimelemaniBolum + "--OgrElemaniNo: " + o.ogretimElemaniNo + "--OgrEleAd: " + o.ogretimElemaniAd+ "--OgrEleSoyad: " + o.ogretimElemaniSoyad + " " + o.GetType());
+                DerseEklenenOgretimElemanlari.Items.Clear();
+                DersNo = Convert.ToInt32(textBox6.Text);
+                foreach (OgretimElemani o in Universite.FakulteList[Baslangıc.FakulteNo].BolumList[BolumEkran.BolumNo].DersList[DersEkle.DersNo].DerseKayitliOgretimElemani.Values)
+                {
+                    DerseEklenenOgretimElemanlari.Items.Add("OgrEleBolum:" + o.ogretimelemaniBolum + "--OgrElemaniNo: " + o.ogretimElemaniNo + "--OgrEleAd: " + o.ogretimElemaniAd + "--OgrEleSoyad: " + o.ogretimElemaniSoyad + " " + o.GetType());
 
+                }
+            }
+            catch(Exception)
+            {
+                MessageBox.Show("Ogretim Elemani Atamadınız");
             }
         }
     }

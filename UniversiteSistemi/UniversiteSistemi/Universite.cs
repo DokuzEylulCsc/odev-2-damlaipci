@@ -26,7 +26,7 @@ namespace UniversiteSistemi
             return instance;
         }
 
-        public void FakulteEkle(int FakulteNo, string FakulteAdi)// Fakulte Ekleme metodu.
+        public void FakulteEkle(int FakulteNo, string FakulteAdi)// Üniversiteye fakülte ekleme metodu
         {
             try
             {
@@ -39,7 +39,7 @@ namespace UniversiteSistemi
                 MessageBox.Show("Fakulte Bulunmaktadır");
             }
         }
-        public void FakulteSil(int FakulteNo,string FakulteAdi)
+        public void FakulteSil(int FakulteNo,string FakulteAdi)//Universite silme metodu
         {
             try
             {

@@ -62,7 +62,7 @@ namespace UniversiteSistemi
                 MessageBox.Show("Silinmek istenen ogrenci bulunamamktadır");
             }
         }
-        public void OgretimElemaniAtama(int OgretimElemaniNo, OgretimElemani ogr)
+        public void OgretimElemaniAtama(int OgretimElemaniNo, OgretimElemani ogr)//derse var olan öğretim elemanını ekleme(form kodlarınada bakmak lazım)
         {
             try
             {
@@ -75,7 +75,7 @@ namespace UniversiteSistemi
             }
         }
 
-        public void OgretimElemaniSilme(int OgretimElemaniNo)
+        public void OgretimElemaniSilme(int OgretimElemaniNo)//ogretim elemani silme
         {
             try
             {

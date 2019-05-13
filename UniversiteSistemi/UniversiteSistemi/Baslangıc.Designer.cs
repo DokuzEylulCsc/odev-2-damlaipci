@@ -61,6 +61,7 @@
             this.FakülteListesi.Name = "FakülteListesi";
             this.FakülteListesi.Size = new System.Drawing.Size(418, 276);
             this.FakülteListesi.TabIndex = 1;
+            this.FakülteListesi.SelectedIndexChanged += new System.EventHandler(this.FakülteListesi_SelectedIndexChanged);
             // 
             // label2
             // 

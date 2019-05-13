@@ -22,7 +22,7 @@ namespace UniversiteSistemi
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)//bölüme öğrenci ekleme butonu
         {
             try
             {
@@ -48,7 +48,7 @@ namespace UniversiteSistemi
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)//Bolumden öğrenci silme metodu
         {
             try
             {
@@ -79,7 +79,7 @@ namespace UniversiteSistemi
             }
 }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//fromu gizler
         {
             
             this.Hide();
